@@ -1,0 +1,66 @@
+/* Background Styling */
+
+  /* Login Page Background */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../assets/12.jpeg") no-repeat center center/cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  position: fixed;
+}
+
+/* Login Container */
+.login-card {
+  background: rgba(255, 255, 255, 0.15); /* Slight transparency for a premium look */
+  backdrop-filter: blur(12px); /* Stronger glassmorphism effect */
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 360px;
+  text-align: center;
+}
+
+/* Heading */
+.login-card h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1.2rem;
+}
+
+/* Input Fields */
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 17px;
+}
+
+/* Button Styling */
+.login-card button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-card button:hover {
+  background: #e63950;
+}
+
+/* Add slight shadow on input focus */
+.login-card input:focus {
+  box-shadow: 0 0 8px rgba(255, 77, 109, 0.5);
+}

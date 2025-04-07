@@ -1,0 +1,330 @@
+/* Container */
+.styleEvolutionTracker-container {
+  display: flex;
+  height: 100vh;
+  overflow-y: auto;
+  background: url("../assets/styletracker.jpeg");
+  background-size: cover; /* Makes the image fit */
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+/* Sidebar */
+.styleEvolutionTracker-sidebar {
+  width: 250px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 180vh; /* Ensures it starts at full viewport height */
+  height: auto; /* Allows it to grow dynamically */
+}
+
+
+.styleEvolutionTracker-sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.styleEvolutionTracker-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.styleEvolutionTracker-sidebar nav ul li {
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.styleEvolutionTracker-sidebar nav ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.styleEvolutionTracker-content {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  
+    margin-top: 50px; /* Adjust this value as needed */
+ 
+}
+
+/* Dashboard Grid */
+.styleEvolutionTracker-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+/* Flashcard-style question */
+.quiz-flashcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(40px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.quiz-question-number {
+  font-size: 1rem;
+  color: #fbfaf3;
+}
+
+/* Question Card */
+.quiz-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* Options */
+.quiz-options button { 
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid black; /* Adds black border */
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold; /* Makes text bold */
+  text-shadow: 1px 1px 2px black; /* Optional: Adds a slight shadow for better readability */
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+
+.quiz-options button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Pop-up result */
+.quiz-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  animation: popIn 0.5s ease-in-out;
+}
+
+/* Celebration Icon */
+.celebration-icon {
+  font-size: 50px;
+  color: #FFD700;
+  animation: bounce 1s infinite alternate;
+}
+
+/* Close Button */
+.popup-content button {
+  background: #FF6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.popup-content button:hover {
+  background: #ff2f1a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+.trend-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.trend-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+}
+
+.trend-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  color: #070707;
+}
+
+.trend-subtitle {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #151515;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.trend-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.trend-img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.timeline-container {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.timeline-wrapper {
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 4px;
+  background-color: black;
+  transform: translateY(-50%);
+}
+
+.timeline-scroll {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-color: #ff5733;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.5);
+}
+
+.timeline-popup {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  min-width: 180px;
+  display: none;
+  text-align: left;
+  z-index: 10;
+}
+
+.timeline-dot:hover .timeline-popup {
+  display: block;
+}
+
+.popup-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+
+}
+
+.popup-date {
+  font-size: 12px;
+  color: gray;
+  margin: 5px 0;
+}
+
+.popup-category {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.popup-season {
+  font-size: 12px;
+  color: #555;
+}

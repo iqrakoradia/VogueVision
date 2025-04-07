@@ -1,0 +1,485 @@
+/* Explore Container */
+.explore-container {
+  padding: 50px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allows scrolling only if content exceeds viewport */
+  min-height: 100vh;
+  max-height: 100vh; /* Ensures scrolling stops when content ends */
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Header Styles */
+.explore-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  animation: slideIn 10s ease-in-out infinite;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.curated-style {
+  color: #FF6347; /* Tomato color */
+  font-size: 5rem;
+  letter-spacing: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.crafted-for-you {
+  color: #0b0b0a;
+  font-size: 5rem;
+  letter-spacing: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Text Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Flexbox layout for Modules */
+.modules-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+#module1 {
+  background-image: url('C:\Users\abc\Desktop\Vogue\voguevision\src\assets\virtual.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay */
+#module1 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module1 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module1 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module1 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module1 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Module 2 Styles */
+#module2 {
+  background-image: url('C:\Users\abc\Desktop\Vogue\voguevision\src\assets\makeup.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay for Module 2 */
+#module2 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module2 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module2 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module2 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module2 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Module 3 Styles */
+#module3 {
+  background-image: url('C:\Users\abc\Desktop\Vogue\voguevision\src\assets\statictry.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay for Module 2 */
+#module3 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module3 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module3 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module3 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module3 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Module 4 Styles */
+#module4 {
+  background-image: url('C:\Users\abc\Desktop\Vogue\voguevision\src\assets\styletracker.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay for Module 2 */
+#module4 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module4 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module4 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module4 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module4 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Module 5 Styles */
+#module5 {
+  background-image: url('C:\Users\abc\Desktop\Vogue_copy\voguevision\src\assets\mood2.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay for Module 2 */
+#module5 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module5 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module5 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module5 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module5 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Module 6 Styles */
+#module6 {
+  background-image: url('C:\Users\abc\Desktop\Vogue_copy\voguevision\src\assets\brandfinder.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Module Content Overlay for Module 2 */
+#module6 .module-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+}
+
+#module6 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#module6 p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+#module6 .explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#module6 .explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+/* General Module Styles */
+.module {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  width: calc(33.33% - 40px);
+  height: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: comeUp 1s ease-out forwards;
+}
+
+/* Staggered Animation for Rows */
+.module:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.module:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.module:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.module:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes comeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+  .module {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .module {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Module Content */
+.module-content {
+  text-align: center;
+  max-width: 80%;
+  padding: 30px;
+}
+
+.module h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.module p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.explore-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #e53e30;
+  transform: scale(1.1);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}

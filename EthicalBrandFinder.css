@@ -1,0 +1,296 @@
+body {
+  background: #538e78 !important;
+  min-height: 100vh; /* Ensures it covers at least the screen height */
+  height: auto; /* Adjusts dynamically based on content */
+  margin: 0;
+  padding: 0;
+}
+
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f8e1e7, #d4efff, #d3f8d3) !important;
+  min-height: calc(100vh - 80px); /* Adjust 80px to your header height */
+  margin-top: 80px; /* Push content below the fixed header */
+  border-radius: 10px; /* Optional for a cleaner look */
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.animated-title {
+  font-size: 4rem;
+  font-family: 'Great Vibes', cursive;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #333;
+  display: inline-block;
+  width: 0;
+  animation: typing 8s steps(60, end) forwards, removeCursor 0.5s 8s forwards;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes removeCursor {
+  100% { border-right: none; }
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #211c1c;
+}
+
+.main-content {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  width: 300px;
+  height: 100vh;
+  max-height: 400px;
+  overflow-y: auto;
+  flex-shrink: 0;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.filter-sidebar h3 {
+  margin-top: 1rem;
+}
+
+.filter-option {
+  margin-bottom: 0.5rem;
+}
+
+.filter-sidebar input[type="range"] {
+  width: 100%;
+}
+
+/* Brand List */
+.brand-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Brand Card */
+.brand-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-card:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.brand-tagline {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.brand-meta {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.brand-rating {
+  font-weight: bold;
+}
+
+.view-products-btn {
+  margin-top: auto;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.view-products-btn:hover {
+  background-color: #555;
+}
+
+/* Brand Detail */
+.brand-detail-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand-detail-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Product Grid in Brand Detail */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px; /* Increased height */
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+
+.add-to-cart-btn {
+  margin-top: auto;
+  background-color: #008f39;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #00732e;
+}
+
+/* Cart Icon Placement */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: url('../assets/iqrabg.jpg') no-repeat center center/cover;
+  border-bottom: 1px solid #eee;
+}
+
+.header-content {
+  text-align: left;
+}
+
+
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e00;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.cart-drawer {
+  position: absolute; /* Or fixed if needed */
+  top: 60px; /* Adjust so it aligns correctly */
+  right: 10px;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.checkout-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+}

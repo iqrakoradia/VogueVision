@@ -1,0 +1,223 @@
+/* Modern and Sleek Pinterest-style CSS for MoodBoard Generator */
+
+body.moodboard-generator {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f5f2;
+  margin: 0;
+  padding: 0;
+
+}
+/* MoodBoardGenerator.css */
+
+.container.moodboard-generator {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffece7;
+  min-height: 100vh;
+}
+
+/* Vertical Sidebar Navbar */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+.user-info.navbar-user {
+  margin-bottom: 20px; /* Add some spacing below the user icon */
+}
+
+.sidebar .nav-item {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar .nav-item:hover {
+  background: #f0f0f0;
+}
+
+.sidebar .nav-item i {
+  font-size: 24px;
+  color: #333;
+}
+
+.sidebar .user-email {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 100px;
+  flex-grow: 1;
+  padding: 20px;
+}
+.header.moodboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center content horizontally */
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.search-bar.moodboard-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Ensure inner content is centered */
+  width: 50%;  /* Adjust width as needed */
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 16px;
+  margin: 0 auto;  /* Center the search bar */
+}
+
+.search-bar.moodboard-search input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.search-bar.moodboard-search button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar.moodboard-search button:hover {
+  background-color: #c5001a;
+}
+
+.masonry-grid {
+  display: flex;
+  margin-left: -10px;
+  width: auto;
+}
+
+.masonry-column {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+
+.mood-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mood-image:hover {
+  transform: scale(1.05);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  color: #e60023;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.like-button:hover {
+  color: #c5001a;
+}
+
+.image-container {
+  position: relative;
+}
+
+.create-board button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.create-board button:hover {
+  background-color: #c5001a;
+}
+.comments-section {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.comments-section input {
+  width: calc(100% - 80px);
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.comments-section button {
+  background-color: #e60023;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.comments-section button:hover {
+  background-color: #bf001c;
+}
+
+.comments-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.comments-section li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.comments-section li strong {
+  color: #333;
+}
+
