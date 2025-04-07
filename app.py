@@ -1,53 +1,48 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import numpy as np
+from flask import Flask, request, send_file
 import torch
-from transformers import CLIPProcessor, CLIPModel
-from tensorflow.keras.models import load_model
+import cv2
+import numpy as np
+from PIL import Image
 import os
 
-# Ensure the models directory exists
-os.makedirs("backend/models", exist_ok=True)
+app = Flask(__name__)
+UPLOAD_FOLDER = "uploads"
+RESULTS_FOLDER = "results"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
-# Save the trained model
-model.save("backend/models/lstm_fashion_model.h5")
-print("✅ Model saved at 'backend/models/lstm_fashion_model.h5'")
+# Load AI Model (e.g., CP-VTON, OpenPose)
+try_on_model = torch.hub.load("facebookresearch/deepfashion2", "CP-VTON")
 
+def process_virtual_try_on(user_image_path, cloth_image_path):
+    user_image = Image.open(user_image_path)
+    cloth_image = Image.open(cloth_image_path)
 
-app = FastAPI()
+    # Apply AI Model
+    result_image = try_on_model(user_image, cloth_image)
 
-# Load LSTM model for outfit prediction
-lstm_model = load_model("lstm_fashion_model.h5")
+    result_path = os.path.join(RESULTS_FOLDER, "final_tryon.png")
+    result_image.save(result_path)
+    return result_path
 
-# Load OpenAI CLIP model for trend recommendations
-clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+@app.route("/upload", methods=["POST"])
+def upload_images():
+    if "user_image" not in request.files or "cloth_image" not in request.files:
+        return {"error": "Upload both images"}, 400
 
-class OutfitInput(BaseModel):
-    past_outfits: list[str]
+    user_file = request.files["user_image"]
+    cloth_file = request.files["cloth_image"]
 
-@app.post("/predict-outfit")
-def predict_outfit(data: OutfitInput):
-    try:
-        past_outfits = np.array(data.past_outfits).reshape(1, -1, 1)  # Reshape for LSTM
-        predicted_outfit = lstm_model.predict(past_outfits)
-        return {"predicted_outfit": predicted_outfit.tolist()}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    user_image_path = os.path.join(UPLOAD_FOLDER, "user.png")
+    cloth_image_path = os.path.join(UPLOAD_FOLDER, "cloth.png")
 
-class TrendInput(BaseModel):
-    style: str
+    user_file.save(user_image_path)
+    cloth_file.save(cloth_image_path)
 
-@app.post("/recommend-trends")
-def recommend_trends(data: TrendInput):
-    try:
-        inputs = clip_processor(text=[f"{data.style} fashion trends"], return_tensors="pt")
-        outputs = clip_model(**inputs)
-        trend_vector = outputs.logits_per_text.detach().numpy().tolist()
-        return {"recommended_trends": trend_vector}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    # Process the virtual try-on
+    result_path = process_virtual_try_on(user_image_path, cloth_image_path)
+
+    return send_file(result_path, mimetype="image/png")
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    app.run(debug=True)
